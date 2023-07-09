@@ -94,6 +94,11 @@ if (question.ToLower() == "y")
     Console.WriteLine("Пример №3: Russia, Denmark, Kazan");
 
     int key = PromptNumber("Введите желаемый вариант: ");
+    while (key !=1 && key !=2 && key !=3)
+    {
+        Console.Write("Введен неверный номер примера...");
+        key = PromptNumber("Повторите попытку: ");
+    }
     if (key == 1)
     {
     string[] newarray = { $"Hello", "2", "world", ":-)" };
@@ -114,10 +119,6 @@ if (question.ToLower() == "y")
         PrintArray(newarray);
         string[] conditionArray = ConditionArray(newarray);
         PrintArray(conditionArray);
-    }
-    else
-    {
-        Console.Write("Введен неверный номер примера...");
     }
 }
 else
