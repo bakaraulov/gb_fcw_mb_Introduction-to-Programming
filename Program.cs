@@ -21,7 +21,7 @@
 Console.Clear();
 Console.WriteLine("Программа из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам...");
 
-int PromptNumber (string msg)
+int PromptNumber (string msg)   // метод ввода цифр
 {
     Console.Write(msg);
     string value = Console.ReadLine();
@@ -31,18 +31,18 @@ int PromptNumber (string msg)
         Console.Write("Неверный ввод. Повторите: ");
         value = Console.ReadLine();
     }
-    Console.Clear();
+    // Console.Clear();
     return val;
 }
 
-string PromptString (string msg)
+string PromptString (string msg)    // метод ввода строк
 {
     Console.Write(msg);
     string value = Console.ReadLine();
     return value;
 }
 
-string[] CreateArray()
+string[] CreateArray()  // ввод массива вручную
 {
     string[] array = new string[] {};
     for (int i=0; i<=array.Length; i++)
@@ -61,7 +61,7 @@ string[] CreateArray()
     return array;
 }
 
-void PrintArray(string[] array)
+void PrintArray(string[] array) // печать массива
 {
     for (int i=0; i<array.Length; i++)
     {
@@ -70,7 +70,7 @@ void PrintArray(string[] array)
     Console.WriteLine();
 }
 
-string[] ConditionArray(string[] array)
+string[] ConditionArray(string[] array) // основной метод. создание массива, елементы которого не больше 3 символов
 {
     string[] result = new string[] {};
     int j = 0;
@@ -93,8 +93,8 @@ if (question.ToLower() == "y")
     Console.WriteLine("Пример №2: 1234, 1567, - 2, computer science");
     Console.WriteLine("Пример №3: Russia, Denmark, Kazan");
 
-    int key = PromptNumber("Введите желаемый вариант: ");
-    while (key !=1 && key !=2 && key !=3)
+    int key = PromptNumber("Введите желаемый вариант: ");   // выбор массива из мариантов
+    while (key !=1 && key !=2 && key !=3)   // проверка на правильность ввода нужного варианта
     {
         Console.Write("Введен неверный номер примера...");
         key = PromptNumber("Повторите попытку: ");
@@ -123,7 +123,7 @@ if (question.ToLower() == "y")
 }
 else
 {
-    question = PromptString("Вы хотите ввести текст как массив? (y-да, n- нет(текст будет вводится целой строкой)): ");
+    question = PromptString("Вы хотите ввести текст как массив? (y-да, n- нет(текст будет вводится целой строкой)): "); // ввод массива вручную
     if (question.ToLower() == "y")
     {
        string[] newarray = CreateArray();
@@ -133,7 +133,7 @@ else
     }
     else
     {
-        string text = PromptString("Введите собственный текст на Английском языке!!! : ");
+        string text = PromptString("Введите собственный текст на Английском языке!!! : ");  // ввод текста, который будет преобразован в массив. Ввод требуется исполнить латинскими символами
         var date = text.Split(" ");
         date.ToArray();
         string[] conditionArray = ConditionArray(date);
