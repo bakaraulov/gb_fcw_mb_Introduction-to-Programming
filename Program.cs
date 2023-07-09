@@ -82,3 +82,57 @@ string[] ConditionArray(string[] array)
     }
     return result;
 }
+
+string question = PromptString("Вы хотите использовать готовые примеры массива? Иначе ввод вручну. (y-да, n- нет): ");
+if (question.ToLower() == "y")
+{
+    Console.WriteLine("Пример №1: Hello, 2, world, :-)");
+    Console.WriteLine("Пример №2: 1234, 1567, - 2, computer science");
+    Console.WriteLine("Пример №3: Russia, Denmark, Kazan");
+
+    int key = PromptNumber("Введите желаемый вариант: ");
+    if (key == 1)
+    {
+    string[] newarray = { $"Hello", "2", "world", ":-)" };
+    PrintArray(newarray);
+    string[] conditionArray = ConditionArray(newarray);
+    PrintArray(conditionArray);
+    }
+    else if (key == 2)
+    {
+        string[] newarray = { $"1234", "1567", "-2", "computer science" };
+        PrintArray(newarray);
+        string[] conditionArray = ConditionArray(newarray);
+        PrintArray(conditionArray);
+    }
+    else if (key == 3)
+    {
+        string[] newarray = { $"Russia", "Denmark", "Kazan" };
+        PrintArray(newarray);
+        string[] conditionArray = ConditionArray(newarray);
+        PrintArray(conditionArray);
+    }
+    else
+    {
+        Console.Write("введен неверный номер примера...");
+    }
+}
+else
+{
+    question = PromptString("Вы хотите ввести текс как массив? (y-да, n- нет(текст будет вводится целой строкой)): ");
+    if (question.ToLower() == "y")
+    {
+       string[] newarray = CreateArray();
+       PrintArray(newarray);
+       string[] conditionArray = ConditionArray(newarray);
+       PrintArray(conditionArray);
+    }
+    else
+    {
+        string text = PromptString("Введите собственный текст на Английском языке!!! : ");
+        var date = text.Split(" ");
+        date.ToArray();
+        string[] conditionArray = ConditionArray(date);
+        PrintArray(conditionArray);       
+    }
+}
