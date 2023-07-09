@@ -21,3 +21,64 @@
 Console.Clear();
 Console.WriteLine("Программа из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам...");
 
+int PromptNumber (string msg)
+{
+    Console.Write(msg);
+    string value = Console.ReadLine();
+    if ((int.TryParse(value, out int val)) == false)
+    {
+        Console.WriteLine("Это не число ");
+    }
+    return val;
+}
+
+string PromptString (string msg)
+{
+    Console.Write(msg);
+    string value = Console.ReadLine();
+    return value;
+}
+
+string[] CreateArray()
+{
+    string[] array = new string[] {};
+    for (int i=0; i<=array.Length; i++)
+    {         
+        string key = PromptString("Введите значение или нажмите клавишу 'Q' -выход: ");
+        if (key.ToLower() == "q")
+        {
+           i = array.Length; 
+        }
+        else
+        {
+            Array.Resize(ref array, array.Length + 1);
+            array[i] = key;            
+        }
+    }  
+    return array;
+}
+
+void PrintArray(string[] array)
+{
+    for (int i=0; i<array.Length; i++)
+    {
+        Console.Write (array[i]+" ");
+    }
+    Console.WriteLine();
+}
+
+string[] ConditionArray(string[] array)
+{
+    string[] result = new string[] {};
+    int j = 0;
+    for(int i=0; i<array.Length; i++)
+    {        
+        if (array[i].Length <= 3)
+        {  
+            Array.Resize(ref result, result.Length + 1);
+            result[j] = array[i];
+            j++;
+        }
+    }
+    return result;
+}
