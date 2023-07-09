@@ -2,7 +2,7 @@
 https://gb.ru <br></p>
 
 ### ***Студент: Караулов Борис*** 
-https://t.me/lyshu <br></p> b.karaulov@ya.ru <br></p> https://github.com/bakaraulov<br></p>
+https://t.me/lyshu <br></p> b.karaulov@ya.ru <br></p> https://github.com/bakaraulov<br></p>https://github.com/bakaraulov/gb_fcw_mb_Introduction-to-Programming
 
 
 ________________________
