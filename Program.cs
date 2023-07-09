@@ -25,10 +25,13 @@ int PromptNumber (string msg)
 {
     Console.Write(msg);
     string value = Console.ReadLine();
-    if ((int.TryParse(value, out int val)) == false)
+    int val = 0;
+    while ((int.TryParse(value, out val)) != true)
     {
-        Console.WriteLine("Это не число ");
+        Console.Write("Неверный ввод. Повторите: ");
+        value = Console.ReadLine();
     }
+    Console.Clear();
     return val;
 }
 
@@ -114,12 +117,12 @@ if (question.ToLower() == "y")
     }
     else
     {
-        Console.Write("введен неверный номер примера...");
+        Console.Write("Введен неверный номер примера...");
     }
 }
 else
 {
-    question = PromptString("Вы хотите ввести текс как массив? (y-да, n- нет(текст будет вводится целой строкой)): ");
+    question = PromptString("Вы хотите ввести текст как массив? (y-да, n- нет(текст будет вводится целой строкой)): ");
     if (question.ToLower() == "y")
     {
        string[] newarray = CreateArray();
